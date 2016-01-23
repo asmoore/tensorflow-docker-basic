@@ -7,9 +7,9 @@ RUN easy_install pip
 WORKDIR /code/
 
 # Add requirements and install
+RUN pip install --upgrade https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-0.6.0-cp27-none-linux_x86_64.whl
 ADD ./requirements.txt /code/
 RUN pip install -r ./requirements.txt
-RUN pip install --upgrade https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-0.6.0-cp27-none-linux_x86_64.whl
 
 # Add service.conf
 ADD /run.py /code/
